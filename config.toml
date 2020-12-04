@@ -1,0 +1,63 @@
+
+languageCode = "en-us"
+title = "Hasibul"
+theme = "hyde-hyde"
+googleAnalytics = ""
+builddrafts = false
+paginate = 10
+
+## Site Settings
+[params]
+    author = "Hasibul Haque"
+    description = "my learning notes"
+    authorimage = "/img/site/profile.png"
+    dateformat = "Jan 2, 2006"
+
+    # sidebar, copyright & license
+    copyright = "Hasibul Haque"
+    showBuiltWith = false
+
+    relatedPosts = true
+    enableRobotsTXT = true
+    enableEmoji = true
+
+    highlightjs = true
+    highlightjsstyle = "solarized-light"
+
+    #toc = "tocbot"
+    mainSections = "posts"
+
+[params.social]
+    github = "hasibul2363"
+    email = "hasibul2363@gmail.com"
+
+## Main Menu
+[[menu.main]]
+    name = "Home"
+    identifier = "home"
+    weight = 50
+    url = "/"
+
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 100
+    url = "/pages/about/"
+
+[[menu.main]]
+    name = "Blog Posts"
+    weight = 200
+    identifier = "posts"
+    url = "/posts/"
+
+[[menu.main]]
+    name = "Categories"
+    weight = 200
+    identifier = "categories"
+    url = "/categories/"
+
+[[menu.main]]
+    name = "Tags"
+    weight = 200
+    identifier = "tags"
+    url = "/tags/"
