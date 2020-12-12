@@ -1,6 +1,7 @@
 #VS
 .vs
 /.vs
+resources/_gen
 # Logs
 logs
 *.log
