@@ -10,7 +10,7 @@ paginate = 10
 [params]
     author = "Hasibul Haque"
     description = "my learning notes"
-    authorimage = "img/site/profile.png"
+    authorimage = "https://hasibulhaque.onrender.com/img/site/profile.png"
     dateformat = "Jan 2, 2006"
 
     # sidebar, copyright & license
