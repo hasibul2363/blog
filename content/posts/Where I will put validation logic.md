@@ -2,10 +2,10 @@
 title: "Where I will put validation logic"
 date: 2021-01-01T22:40:33+01:00
 draft: false
-tags : ["validation"]
+tags : ["Validation"]
 categories : ["DDD"]
 ---
-Sometimes we are confused, where to put validation logic. Somebody refers to write it on the application layer (controller/ command handler) and somebody refers to write it in the domain layer if it is business validation. Sometimes we mix data validation with business validation. Here I will try to clear different types of validation and later I will try to describe multiple options for implementation.
+Sometimes we are confused, where to put validation logic. Should we put it application layer or domain layer? Sometimes we mixed data validation with business validation. Through the post, I will try to clarify them.
 
 ### Data Validation
 Data validation is the process of verifying whether the value of a data item comes from the given set of acceptable values or not. 
