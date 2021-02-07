@@ -30,6 +30,7 @@ paginate = 10
 [params.social]
     github = "hasibul2363"
     email = "hasibul2363@gmail.com"
+    linkedin= "hasibul2363"
 
 ## Main Menu
 [[menu.main]]

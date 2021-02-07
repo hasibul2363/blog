@@ -1,7 +1,7 @@
 ---
 title: "Repository"
 date: 2020-12-12
-draft: true
+draft: false
 tags : ["Repository"]
 categories : ["DDD"]
 ---
@@ -36,3 +36,43 @@ IOrderRepository
 }
 ```
 > Please note this interface should be defined inside Domain layer and its implementation will go to infrastructure layer. We should not implement inside domain layer.
+#### Generic Repository
+This repository is not business centric. Here operations are common like Add, update, delete and read. And this repository works on any type of object. If we have some model or business where we don’t have any complex logic on that cases we can easily use it. Like we want to store city name in our system and it requires only crud operation. On that time we don’t need to crate separate repository for it. We can directly use Generic Repository to perform crud operations.
+
+I have seen many people do same thing twice like they have generic repository and also model specific repository but both did the same. Like following
+```cs
+IRepository<T>
+{
+    void Add(T model);
+    T Read(guid id);
+}
+```
+```cs
+// redundant
+IUserRepository
+{
+    void Add(User model);
+    User Read(guid id);
+}
+```
+```IUserRepository``` is redundant because we are doing same thing and not writing any custom business logic to it. We can easily drop IUserRepository and it can be replaced by generic repository.
+
+We can apply method level or class level generics. When we are talking about Generic Repository, actually it is a tool or library that helps to abstract the persistent layer. As it is not a business repository easily we can apply generics to method level instead of class level. Something like following. It will reduce unnecessary instantiation of type based repository.
+
+```cs
+IRepository
+{
+void Add<T>(T Add);
+T Read<T>(guid id);
+}
+```
+### Repository vs DAO or DAL
+Repository works with the model where all invariants are mate. on the other hand, DAL works with the table or dataset. DAL is an old concept where we ware developing system based on table and stored procedure. If we have database sentric system then DAL is ok and it is not object orientd way of communication. DAL also violates encapsulation. If we use DAL then there is a possibility we can violate encapsulation as we can access interla object without the aggregate root. If we do so then there is a chance it will not meet all invariants.
+### Repository and CQRS
+Repository works with the collection and that collection is the same type. It works on single aggregate root. If there is a case, we need to communicate with multiple aggregates and also need to return some custom type model in that case query or query handler approach is good. 
+### Summary
+Need to create separate repository class when we are doing DDD and business has specific use case.
+
+Use Generic repository when we are doing only CRUD operation. It is not necessary to create separate repository class for each type. It is redundant. Create separate repository class only when you have to implement some custom logic.
+
+Go for CQRS or query model-based approach when it requires to query through multiple domain models to fulfill the business requirement. Repository only works on same type of domain model.
