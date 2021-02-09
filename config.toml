@@ -6,12 +6,15 @@ googleAnalytics = ""
 builddrafts = false
 paginate = 10
 
+
+
 ## Site Settings
 [params]
     author = "Hasibul Haque"
     description = "my learning notes"
     authorimage = "https://hasibulhaque.onrender.com/img/site/profile.png"
     dateformat = "Jan 2, 2006"
+    disqusShortname = "hasibulhaquesblog"
 
     # sidebar, copyright & license
     copyright = "Hasibul Haque"
